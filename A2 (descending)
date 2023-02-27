@@ -1,0 +1,108 @@
+int sensorTop=14;  // (GF) sensorTop means IR senor which will be installed on the bottom most step 
+int sensorBottum=15;  // (FF) sensorBottum means IR senor which will be installed on the top most step
+
+int Relay1=53;   // (GF) Represents Led on Step ~ 1
+int Relay2=51;
+int Relay3=49;
+int Relay4=47;
+int Relay5=45;
+int Relay6=43; 
+int Relay7=41;
+int Relay8=39;
+int Relay9=37;
+int Relay10=35; 
+int Relay11=33; 
+int Relay12=31; 
+int Relay13=29; 
+int Relay14=27;
+int Relay15=25; 
+int Relay16=23; 
+int Relay17=22; 
+int Relay18=26;   // (FF) Represents Led on Step ~ 18
+int RealayA1=7; 
+
+void setup() 
+{
+  
+  pinMode(Relay1, OUTPUT);
+  pinMode(Relay2, OUTPUT);
+  pinMode(Relay3, OUTPUT);
+  pinMode(Relay4, OUTPUT);
+  pinMode(Relay5, OUTPUT);
+  pinMode(Relay6, OUTPUT);
+  pinMode(Relay7, OUTPUT);
+  pinMode(Relay8, OUTPUT);
+  pinMode(Relay9, OUTPUT); 
+  pinMode(Relay10, OUTPUT); 
+    
+  pinMode(RealayA1, OUTPUT);
+
+  pinMode(sensorTop,    INPUT);
+  pinMode(sensorBottum, INPUT);
+}
+
+void loop()
+{
+
+ // Sense sequence 
+ if(digitalRead(sensorBottum=15)==LOW)
+ {
+  digitalWrite(RealayA1,HIGH);
+  delay(100);
+  digitalWrite(Relay10,HIGH);
+  delay(900);
+  digitalWrite(Relay9,HIGH);
+  delay(900);
+  digitalWrite(Relay8,HIGH);
+  delay(900);
+  digitalWrite(Relay7,HIGH);
+  delay(900);
+  digitalWrite(Relay6,HIGH);
+  delay(900);
+  digitalWrite(Relay5,HIGH);
+  delay(900);
+  digitalWrite(Relay4,HIGH);
+  delay(900);
+  digitalWrite(Relay3,HIGH);
+  delay(900);
+  digitalWrite(Relay2,HIGH);
+  delay(900);
+  digitalWrite(Relay1,HIGH);
+  delay(5000); // safe stroe delay  
+  digitalWrite(Relay1,LOW);
+  delay(500);
+  digitalWrite(Relay2,LOW);
+  delay(500);
+  digitalWrite(Relay3,LOW);
+  delay(500);
+  digitalWrite(Relay4,LOW);
+  delay(500);
+  digitalWrite(Relay5,LOW);
+  delay(500);
+  digitalWrite(Relay6,LOW);
+  delay(500);
+  digitalWrite(Relay7,LOW);
+  delay(500);
+  digitalWrite(Relay8,LOW);
+  delay(500);
+  digitalWrite(Relay9,LOW);
+  delay(500);
+  digitalWrite(Relay10,LOW);
+  delay(5000); // Arduno 1 delay
+  digitalWrite(RealayA1,LOW);
+ }
+  else
+ {
+  digitalWrite(RealayA1,LOW);
+  digitalWrite(Relay10,LOW);
+  digitalWrite(Relay9,LOW);
+  digitalWrite(Relay8,LOW);
+  digitalWrite(Relay7,LOW);
+  digitalWrite(Relay6,LOW);
+  digitalWrite(Relay5,LOW);
+  digitalWrite(Relay4,LOW);
+  digitalWrite(Relay3,LOW);
+  digitalWrite(Relay2,LOW);
+  digitalWrite(Relay1,LOW);
+ }
+}
