@@ -1,0 +1,53 @@
+int relayA1=9;
+int relayA2=8;
+int sensorLDR=21;
+int SSR12V=14;
+int SSR9V=15;
+int sensorTop=10;
+int sensorBottum=11; 
+
+void setup()
+{
+pinMode(relayA1, OUTPUT);
+pinMode(relayA2, OUTPUT);
+pinMode(SSR12V,  OUTPUT);
+pinMode(SSR9V,   OUTPUT);
+pinMode(sensorLDR,   INPUT);
+pinMode(sensorTop,   INPUT);
+pinMode(sensorBottum,INPUT);
+}
+
+void loop (){
+  
+ // accendding [responsible] = A1 //
+ 
+  if(digitalRead(sensorBottum) == LOW)
+  {
+    digitalWrite(relayA2, HIGH);
+    digitalWrite(relayA1,LOW);
+    delay(30000);
+    digitalWrite(relayA1,LOW);
+    digitalWrite(relayA2,LOW);
+    }
+    else
+    {
+     digitalWrite(relayA1,LOW);
+     digitalWrite(relayA2,LOW);
+     }
+
+// deccendding [responsible]= A2 //
+
+ if(digitalRead(sensorTop) == LOW)
+ {
+  digitalWrite(relayA1,HIGH);
+  digitalWrite(relayA2, LOW);
+  delay(30000);
+  digitalWrite(relayA1,LOW);
+  digitalWrite(relayA2,LOW);
+  }
+  else
+  {
+   digitalWrite(relayA1,LOW);
+   digitalWrite(relayA2,LOW);
+   }
+     }
